@@ -1,0 +1,22 @@
+Source: hello
+Priority: extra
+Maintainer: Mathieu Malaterre <malat@debian.org>
+Build-Depends: cmake (>= 2.8.2), debhelper (>= 9)
+Standards-Version: 3.9.5
+Section: libs
+
+Package: libfoo-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libfoo0 (= ${binary:Version}), ${misc:Depends}
+Description: development files for foo library
+ foo is super
+
+Package: libfoo0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: foo library
+ foo is super

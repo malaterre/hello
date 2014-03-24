@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+pkg_lib=libfoo0
+pkg_dev=libfoo-dev
+
+override_dh_install:
+	dh_install -p$(pkg_lib) usr/lib/libfoo.so.*
+	dh_install -p$(pkg_dev) usr/lib/libfoo.so
+	dh_install --list-missing

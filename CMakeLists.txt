@@ -1,4 +1,4 @@
-project(hello)
+project(hello C)
 add_library(foo SHARED foo.c)
 set_target_properties(foo PROPERTIES VERSION 1.0 SOVERSION 0)
 install(TARGETS foo
